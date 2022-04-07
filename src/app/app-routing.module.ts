@@ -21,7 +21,7 @@ const routes: Routes = [
     component: FeaturesComponent
   },
   {
-    path: 'blog',
+    path: 'catalog',
     component: BlogComponent
   },
   {

@@ -48,7 +48,8 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/home'])
       localStorage.setItem('authToken', result.accessToken);
       localStorage.setItem('userId', result._id);
-      localStorage.setItem('username', result.email);
+      localStorage.setItem('email', result.email);
+      localStorage.setItem('username', result.username);
     })
   }
 

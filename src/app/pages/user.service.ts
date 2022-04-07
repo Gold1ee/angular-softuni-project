@@ -25,4 +25,20 @@ export class UserService {
   register$(userData: CreateUserDto): Observable<IUser> {
     return this.httpClient.post<IUser>(`${environment.apiUrl}users/register`, userData)
   }
+  login$(userData: CreateUserDto): Observable<IUser> {
+    return this.httpClient.post<IUser>(`${environment.apiUrl}users/login`, userData)
+  }
+
+  getAuthToken(){
+    return localStorage.getItem('authToken')
+  }
+  getUsername(){
+    return localStorage.getItem('username');
+  }
+  getUserId(){
+    return localStorage.getItem('userId');
+  }
+  isLoggedIn(){
+    return localStorage.getItem('authToken') !== null;
+  }
 }

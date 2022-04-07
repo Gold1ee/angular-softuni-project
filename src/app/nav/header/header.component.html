@@ -11,12 +11,16 @@
       <ul>
         <li><a class="active " routerLink="/home">Home</a></li>
         <li><a routerLink="/features">Features</a></li>
-        <li><a routerLink="services.html">Services</a></li>
-        <li *ngIf="isLoggedIn()"><a routerLink="/blog">Blog</a></li>
-        <li *ngIf="isLoggedIn()"><a (click)="logoutHandler()" routerLink="/logout">Logout</a></li>
-        <ng-container *ngIf="!isLoggedIn()">
-          <li><a routerLink="/login">Login</a></li>
-          <li><a routerLink="/register">Register</a></li>
+        <li *ngIf="isLoggedIn()"><a routerLink="/catalog">Catalog</a></li>
+        <li *ngIf="isLoggedIn()"><a routerLink="/create-a-post">Create a post</a></li>
+
+        <ng-container>
+          <li id="profileInfo">
+            <a *ngIf="isLoggedIn()" (click)="logoutHandler()" routerLink="/logout">Logout</a>
+            <a *ngIf="!isLoggedIn() " routerLink="/login">Login</a>
+            <a *ngIf="!isLoggedIn() " routerLink="/register">Register</a>
+            <a *ngIf="isLoggedIn()" href="">{{currentUsername}}'s profile</a>
+          </li>
         </ng-container>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>

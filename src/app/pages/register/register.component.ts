@@ -13,6 +13,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
 
+  errorMessage: string = ""
+
   passwordControl = new FormControl('', [Validators.required, Validators.minLength(5)])
 
 
@@ -44,12 +46,22 @@ export class RegisterComponent implements OnInit {
       email: email,
       password: passwords.password
     }
-    this.userService.register$(body).subscribe((result) => {
-      this.router.navigate(['/home'])
-      localStorage.setItem('authToken', result.accessToken);
-      localStorage.setItem('userId', result._id);
-      localStorage.setItem('email', result.email);
-      localStorage.setItem('username', result.username);
+    this.errorMessage = ""
+    this.userService.register$(body).subscribe({
+      next: result => {
+        this.router.navigate(['/home'])
+        localStorage.setItem('authToken', result.accessToken);
+        localStorage.setItem('userId', result._id);
+        localStorage.setItem('email', result.email);
+        localStorage.setItem('username', result.username);
+      },
+      complete: () => {
+        console.log('register');
+
+      },
+      error: (err) => {
+        this.errorMessage = err.error.message
+      }
     })
   }
 

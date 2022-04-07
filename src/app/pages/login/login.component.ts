@@ -14,6 +14,7 @@ import { CreateUserDto } from '../user.service';
 })
 
 export class LoginComponent implements OnInit {
+  errorMessage: string = ""
 
   loginFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('', [Validators.required, emailValidator]),
@@ -36,13 +37,27 @@ export class LoginComponent implements OnInit {
       password: password,
       username: ''
     }
-    this.userService.login$(body).subscribe((result) => {
-      this.router.navigate(['/home'])
-      localStorage.setItem('authToken', result.accessToken);
-      localStorage.setItem('userId', result._id);
-      localStorage.setItem('email', result.email);
-      localStorage.setItem('username', result.username);
+    this.errorMessage = "";
+    this.userService.login$(body).subscribe({
+      next: result => {
+        this.router.navigate(['/home'])
+        localStorage.setItem('authToken', result.accessToken);
+        localStorage.setItem('userId', result._id);
+        localStorage.setItem('email', result.email);
+        localStorage.setItem('username', result.username);
+      },
+      complete: () => {
+        console.log('logged');
+
+      },
+      error: (err) => {
+        this.errorMessage = err.error.message
+      }
+
     })
+
+
+
   }
 
 }

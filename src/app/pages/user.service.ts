@@ -41,4 +41,7 @@ export class UserService {
   isLoggedIn(){
     return localStorage.getItem('authToken') !== null;
   }
+  logout(){
+    window.localStorage.clear();
+  }
 }

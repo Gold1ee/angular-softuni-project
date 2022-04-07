@@ -1,0 +1,59 @@
+<section class="features">
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-7 pt-5 order-2 order-md-1">
+                <form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
+
+                    <fieldset>
+                        <h2>Login Form</h2>
+
+                        <ng-container
+                            *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
+                            <p *ngIf="loginFormGroup.controls['email'].errors['required']" class="error">
+                                Email is required!
+                            </p>
+                            <p *ngIf="loginFormGroup.controls['email'].errors['email']" class="error">
+                                Email is not valid!
+                            </p>
+                        </ng-container>
+                        <ng-container
+                            *ngIf="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid">
+                            <p *ngIf="loginFormGroup.controls['password'].errors['required']" class="error">
+                                Password is required!
+                            </p>
+                            <p *ngIf="loginFormGroup.controls['password'].errors['minlength']" class="error">
+                                Password must be at least 5 characters!
+                            </p>
+                        </ng-container>
+                        <p class="field field-icon">
+                            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+                            <input
+                                [class.input-error]="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid"
+                                [class.input-valid]="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].valid"
+                                formControlName="email" type="email" name="email" id="email" placeholder="Email">
+                        </p>
+
+
+                        <p class="field field-icon">
+                            <label for="password"><span><i class="fas fa-lock"></i></span></label>
+                            <input
+                                [class.input-error]="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid"
+                                [class.input-valid]="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].valid"
+                                formControlName="password" type="password" name="password" id="password"
+                                placeholder="******">
+                        </p>
+
+
+                        <p class="text-center">
+                            Don't have an account?
+                            <a routerLink="/register">Register</a>
+                        </p>
+                        <button>Login</button>
+
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

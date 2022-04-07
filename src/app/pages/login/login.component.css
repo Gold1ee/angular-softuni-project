@@ -1,0 +1,64 @@
+
+
+fieldset{
+    background-color: rgba(12, 25, 46, 0.801);
+    color: white;
+    padding: 40px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button{
+    background-color: rgba(35, 53, 85, 0.74);
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    margin-top: 20px;
+}
+button:hover{
+   color:rgb(137, 164, 206);
+   transition: all 0.25s ease-in-out;
+}
+
+input{
+    padding: 10px;
+    padding-right: 50px;
+    padding-left: 40px;
+    border-radius: 10px;
+    border: none;
+}
+label{
+    position: relative;
+    top: 35px;
+    left: 10px;
+    color:rgba(12, 25, 46, 0.801);
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0;
+}
+
+.text-center {
+    margin-top: 20px;
+    text-align: unset!important;
+    margin-left: 5px;
+}
+
+.input-error {
+    border-left: 5px solid red;
+}
+.input-valid {
+    border-left: 5px solid green;
+}

@@ -6,8 +6,10 @@ import { RouterModule } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateAPostComponent } from './create-apost/create-apost.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 
 
@@ -17,13 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
     FeaturesComponent,
     BlogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateAPostComponent,
+    BlogDetailsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class PagesModule { }

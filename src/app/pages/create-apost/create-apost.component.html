@@ -1,0 +1,65 @@
+<section class="features">
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-7 pt-5 order-2 order-md-1">
+                <form class="create-a-post" [formGroup]="createPostFormGroup" (ngSubmit)="postHandler()">
+
+                    <fieldset>
+                        <h2>Create a post </h2>
+                        <!-- <p></p>
+                        <ng-container>
+
+                            <p class="error">
+                                Username is required!
+                            </p>
+                        </ng-container>
+                        <ng-container>
+                            <p class=" error">
+                                Email is required!
+                            </p>
+                            <p>
+                                Email is not valid!
+                            </p>
+                        </ng-container>
+                        <ng-container>
+                            <p>
+                                Password is required!
+                            </p>
+                            <p>
+                                Password must be at least 5 characters!
+                            </p>
+                        </ng-container>
+                        <ng-container>
+                            <p class="error">Password does not match password!</p>
+                        </ng-container> -->
+                        <!-- username -->
+                        <p class="field field-icon">
+                            <input formControlName="postName" type="text" name="postName" id="postName" placeholder="Post name">
+                        </p>
+
+                        <!-- email -->
+                        <p class="field field-icon">
+                            <input formControlName="imageUrl" type="email" name="imageUrl" id="imageUrl"
+                                placeholder="Image URL">
+                        </p>
+
+                        <p class="field field-icon">
+                            <input formControlName="description" type="text" name="description" id="description"
+                                placeholder="Description">
+                        </p>
+
+
+
+                        <!-- password -->
+
+
+
+                        <button>Create a post</button>
+
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

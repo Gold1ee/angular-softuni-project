@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -7,15 +8,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent implements OnInit {
+  public postData
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private postService: PostService, private router:Router) { }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(params => {
+    this.route.params.subscribe(params => {
+      const id = params['id']
 
-      let id = params['id']
-      console.log(id);
+      this.postService.getPost(id).subscribe(post => {
+        this.postData = post
+  
+      })
     })
+  }
+
+  deleteHandler(){
+    this.postService.deletePost$(this.postData._id).subscribe()
+    this.router.navigate(['/catalog'])
   }
 
 }

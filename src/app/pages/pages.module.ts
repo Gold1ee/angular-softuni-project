@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateAPostComponent } from './create-apost/create-apost.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogSingleComponent } from './blog-single/blog-single.component';
+import { EditApostComponent } from './edit-apost/edit-apost.component';
 
 
 
@@ -24,6 +25,7 @@ import { BlogSingleComponent } from './blog-single/blog-single.component';
     CreateAPostComponent,
     BlogDetailsComponent,
     BlogSingleComponent,
+    EditApostComponent,
   ],
   imports: [
     CommonModule,

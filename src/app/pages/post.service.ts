@@ -25,8 +25,17 @@ export class PostService {
   createPost$(postData: CreatePostDto): Observable<IPost> {
     return this.httpClient.post<IPost>(`${environment.apiUrl}jsonstore/posts`, postData)
   }
+  editPost$(postData: CreatePostDto, id): Observable<IPost> {
+    return this.httpClient.put<IPost>(`${environment.apiUrl}jsonstore/posts/${id}`, postData)
+  }
+  deletePost$(id): Observable<IPost> {
+    return this.httpClient.delete<IPost>(`${environment.apiUrl}jsonstore/posts/${id}`)
+  }
 
   getPosts(): Observable<IPost> {
     return this.httpClient.get<IPost>(`${environment.apiUrl}jsonstore/posts`)
+  }
+  getPost(id): Observable<IPost> {
+    return this.httpClient.get<IPost>(`${environment.apiUrl}jsonstore/posts/${id}`)
   }
 }

@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateAPostComponent } from './create-apost/create-apost.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
+import { BlogSingleComponent } from './blog-single/blog-single.component';
 
 
 
@@ -22,6 +23,7 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
     RegisterComponent,
     CreateAPostComponent,
     BlogDetailsComponent,
+    BlogSingleComponent,
   ],
   imports: [
     CommonModule,

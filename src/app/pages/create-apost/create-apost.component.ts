@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { CreatePostDto, PostService } from '../post.service';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class CreateAPostComponent implements OnInit {
     'description': new FormControl('', [Validators.required]),
   })
 
-  constructor(private formBuilder: FormBuilder, private postService: PostService, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private postService: PostService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -36,7 +37,7 @@ export class CreateAPostComponent implements OnInit {
     this.errorMessage = ""
     this.postService.createPost$(body).subscribe({
       next: result => {
-        console.log(result);
+        this.router.navigate(['/catalog'])
 
       },
       complete: () => {

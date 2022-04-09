@@ -25,4 +25,8 @@ export class PostService {
   createPost$(postData: CreatePostDto): Observable<IPost> {
     return this.httpClient.post<IPost>(`${environment.apiUrl}jsonstore/posts`, postData)
   }
+
+  getPosts(): Observable<IPost> {
+    return this.httpClient.get<IPost>(`${environment.apiUrl}jsonstore/posts`)
+  }
 }

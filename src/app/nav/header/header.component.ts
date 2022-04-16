@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  currentUsername: string = this.userService.getUsername()
+
+  currentUsername: string
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.currentUsername = this.userService.getUsername()
   }
 
   isLoggedIn() {

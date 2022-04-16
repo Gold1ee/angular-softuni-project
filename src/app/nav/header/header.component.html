@@ -2,7 +2,7 @@
   <div class="container d-flex justify-content-between align-items-center">
 
     <div class="logo">
-      <h1 class="text-light"><a routerLink="index.html"><span>Gold1e Gram</span></a></h1>
+      <h1 class="text-light"><a routerLink="/home"><span>Gold1e Gram</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a routerLink="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
     </div>
@@ -19,7 +19,7 @@
             <a *ngIf="isLoggedIn()" (click)="logoutHandler()" routerLink="/logout">Logout</a>
             <a *ngIf="!isLoggedIn() " routerLink="/login">Login</a>
             <a *ngIf="!isLoggedIn() " routerLink="/register">Register</a>
-            <a *ngIf="isLoggedIn()" href="">{{currentUsername}}'s profile</a>
+            <a *ngIf="isLoggedIn()" routerLink="/my-profile">User profile</a>
           </li>
         </ng-container>
       </ul>

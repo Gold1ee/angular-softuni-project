@@ -7,6 +7,7 @@ import { EditApostComponent } from './pages/edit-apost/edit-apost.component';
 import { FeaturesComponent } from './pages/features/features.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'create-a-post',
     component: CreateAPostComponent
+  },
+  {
+    path: 'my-profile',
+    component: MyProfileComponent
   },
 ];
 

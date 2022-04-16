@@ -25,7 +25,7 @@
                             {{postData.description}}
                         </p>
                     </div>
-                    <div class="portfolio-description">
+                    <div *ngIf="isOwner()" class="portfolio-description">
                         <div class="buttons">
                             <button><a routerLink="/catalog/details/{{postData._id}}/edit">Edit</a></button>
                             <button><a routerLink="/delete" (click)="deleteHandler()">Delete</a></button>

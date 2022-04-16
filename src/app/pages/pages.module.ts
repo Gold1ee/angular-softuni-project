@@ -12,6 +12,7 @@ import { CreateAPostComponent } from './create-apost/create-apost.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogSingleComponent } from './blog-single/blog-single.component';
 import { EditApostComponent } from './edit-apost/edit-apost.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
 
@@ -26,6 +27,7 @@ import { EditApostComponent } from './edit-apost/edit-apost.component';
     BlogDetailsComponent,
     BlogSingleComponent,
     EditApostComponent,
+    MyProfileComponent,
   ],
   imports: [
     CommonModule,
